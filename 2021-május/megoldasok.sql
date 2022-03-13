@@ -24,12 +24,12 @@ WHERE nev LIKE '%sétány'
 ORDER BY nev ASC;
 
 -- 16. feladat:
-SELECT sorszam, megallok.nev as megallo
+SELECT halozat.sorszam, megallok.nev as megallo
 FROM halozat 
 INNER JOIN megallok ON megallok.id = halozat.megallo
 INNER JOIN jaratok ON jaratok.id = halozat.jarat
-WHERE irany = 'A' AND jaratok.jaratSzam = 'CITY'
-ORDER BY sorszam ASC;
+WHERE halozat.irany = 'A' AND jaratok.jaratSzam = 'CITY'
+ORDER BY halozat.sorszam ASC;
 
 -- 17. feladat:
 SELECT megallok.nev as megallo, count(jaratok.id) as jaratokSzama

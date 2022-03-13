@@ -27,8 +27,8 @@ WHERE versenyzo.nev = 'Valter Attila'
 ORDER BY eredmeny.szakasz ASC;
  
 -- 15. feladat:
-SELECT csapatNev, count(versenyzo.id) as magyarokSzama
+SELECT csapat.csapatNev, count(versenyzo.id) as magyarokSzama
 FROM csapat INNER JOIN versenyzo ON versenyzo.csapatId = csapat.id
 WHERE versenyzo.nemzetiseg = 'HUN'
-GROUP BY csapatNev
+GROUP BY csapat.csapatNev
 HAVING magyarokSzama > 1;
